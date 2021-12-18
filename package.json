@@ -4,7 +4,11 @@
   "description": "a remake of the mcmakler homepage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "babel ./src/index.js --out-dir ./public",
+    "bundle": "npx webpack",
+    "compile": "npm run transpile && npm run bundle",
+    "build": "npx webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -23,8 +27,8 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"
   }
